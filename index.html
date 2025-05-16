@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Coming Soon</title>
+
+    <!-- Police Orbitron (style automobile) -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background: url("images/fond-carbone.png") center center no-repeat;
+            background-size: cover;
+            font-family: 'Orbitron', sans-serif;
+            color: #c0c0c0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            user-select: none;
+            -webkit-user-drag: none;
+        }
+
+        img {
+            max-width: 300px;
+            height: auto;
+            pointer-events: none;
+            -webkit-user-drag: none;
+        }
+
+        p {
+            margin-top: 30px;
+            font-size: 2.2rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+        }
+    </style>
+
+    <script>
+        // Désactive le clic droit
+        document.addEventListener('contextmenu', event => event.preventDefault());
+
+        // Bloque le drag & drop
+        document.addEventListener('dragstart', event => event.preventDefault());
+
+        // Bloque certains raccourcis clavier
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && ['s', 'u', 'c'].includes(e.key.toLowerCase())) {
+                e.preventDefault();
+            }
+        });
+    </script>
+</head>
+<body>
+    <img src="images/logo.png" alt="Logo" draggable="false">
+    <p>Coming Soon</p>
+</body>
+</html>
